@@ -81,62 +81,6 @@ header {
   box-shadow: 0 5px 12px rgba(116, 224, 157, 0.3);
 }
 
-/* Hero Section */
-main {
-  padding: 120px 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-main h1 {
-  font-size: 3.4rem;
-  margin-bottom: 16px;
-  color: white;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-}
-
-main p {
-  font-size: 1.3rem;
-  max-width: 800px;
-  margin: 0 auto 30px;
-  opacity: 0.9;
-}
-
-.btn-primary, .btn-secondary {
-  padding: 12px 28px;
-  margin: 0 10px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  display: inline-block;
-  transition: all 0.3s ease;
-}
-
-.btn-primary {
-  background-color: #74e09d;
-  color: #0d1b2a;
-}
-
-.btn-primary:hover {
-  background-color: #5fd684;
-  transform: translateY(-3px);
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: white;
-  border: 2px solid #74e09d;
-}
-
-.btn-secondary:hover {
-  background-color: rgba(116, 224, 157, 0.1);
-}
-
 /* Section Cards */
 .section-card {
   background: rgba(255, 255, 255, 0.08);
@@ -177,25 +121,6 @@ main p {
   margin-bottom: 6px;
 }
 
-/* GitHub & Paper Links */
-.github-link, .paper-link {
-  display: inline-block;
-  margin-top: 8px;
-  font-size: 0.9rem;
-}
-
-.github-link a, .paper-link a {
-  color: #74e09d;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.github-link a:hover, .paper-link a:hover {
-  text-decoration: underline;
-}
-
 /* Skills Grid */
 .skills-grid {
   display: grid;
@@ -225,51 +150,56 @@ main p {
   line-height: 1.5;
 }
 
-/* Publications */
-.publication {
-  background: rgba(116, 224, 157, 0.08);
-  border: 1px solid rgba(116, 224, 157, 0.2);
+/* Certifications Section */
+/* Certifications Section - White Background */
+.certifications-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 10px;
   padding: 20px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.badge-item {
+  /* No extra background needed — inherits from container */
+  padding: 10px;
   border-radius: 10px;
-  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 150px; /* Matches Credly iframe width */
 }
 
-.publication a {
-  color: #74e09d;
-  text-decoration: none;
+.badge-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.publication a:hover {
-  text-decoration: underline;
+.badge-item iframe {
+  border: none !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive */
+/* Ensure text inside iframe is readable (best effort) */
+.badge-item .credly-credential-title,
+.badge-item .credly-credential-issuer {
+  color: #000 !important; /* Force dark text for readability */
+  font-weight: 600 !important;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .nav-links {
-    gap: 16px;
-    font-size: 0.9rem;
+  .certifications-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
   }
 
-  .btn-download {
-    font-size: 0.85rem;
-    padding: 8px 12px;
-  }
-
-  main h1 {
-    font-size: 2.6rem;
-  }
-
-  main p {
-    font-size: 1.1rem;
-  }
-
-  .btn-primary, .btn-secondary {
-    display: block;
-    margin: 10px auto;
-    width: 80%;
-  }
-
-  .container {
-    padding: 0 16px;
+  .badge-item {
+    width: 170px;
+    margin: 10px 0;
   }
 }
