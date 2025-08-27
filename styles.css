@@ -81,6 +81,59 @@ header {
   box-shadow: 0 5px 12px rgba(116, 224, 157, 0.3);
 }
 
+/* Hero Section */
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+main h1 {
+  font-size: 3.2rem;
+  margin-bottom: 16px;
+}
+
+main p {
+  font-size: 1.3rem;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  opacity: 0.9;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 12px 28px;
+  margin: 0 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #74e09d;
+  color: #0d1b2a;
+}
+
+.btn-primary:hover {
+  background-color: #5fd684;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid #74e09d;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(116, 224, 157, 0.1);
+}
+
 /* Section Cards */
 .section-card {
   background: rgba(255, 255, 255, 0.08);
@@ -150,7 +203,6 @@ header {
   line-height: 1.5;
 }
 
-/* Certifications Section */
 /* Certifications Section - White Background */
 .certifications-container {
   display: flex;
@@ -165,11 +217,10 @@ header {
 }
 
 .badge-item {
-  /* No extra background needed — inherits from container */
   padding: 10px;
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 150px; /* Matches Credly iframe width */
+  width: 150px;
 }
 
 .badge-item:hover {
@@ -177,20 +228,7 @@ header {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.badge-item iframe {
-  border: none !important;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Ensure text inside iframe is readable (best effort) */
-.badge-item .credly-credential-title,
-.badge-item .credly-credential-issuer {
-  color: #000 !important; /* Force dark text for readability */
-  font-weight: 600 !important;
-}
-
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
   .certifications-container {
     flex-direction: column;
